@@ -1,0 +1,12 @@
+{
+  "images" : [
+    {
+      "filename" : "never.pdf",
+      "idiom" : "universal"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

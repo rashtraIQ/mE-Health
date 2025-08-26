@@ -1,0 +1,285 @@
+{
+  "diagnosticReports": [
+    {
+      "id": "dr1",
+      "code_system": "http://loinc.org",
+      "code": "24331-1",
+      "code_display": "Lipid panel",
+      "code_detail": "{\"system\":\"http://loinc.org\",\"code\":\"24331-1\",\"display\":\"Lipid panel\"}",
+      "status": "final",
+      "effectiveDate": "2021-06-15T09:00:00Z",
+      "issued": "2021-06-16T12:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc16",
+      "performerId": "pract7",
+      "organizationId": "org3",
+      "result": [
+        {
+          "reference": "Observation/obs-lipid1",
+          "display": "Cholesterol total 200 mg/dL"
+        },
+        {
+          "reference": "Observation/obs-lipid2",
+          "display": "LDL 120 mg/dL"
+        },
+        {
+          "reference": "Observation/obs-lipid3",
+          "display": "HDL 50 mg/dL"
+        }
+      ],
+      "createdAt": "2021-06-15T08:00:00Z",
+      "updatedAt": "2021-06-16T12:00:00Z"
+    },
+    {
+      "id": "dr2",
+      "code_system": "http://loinc.org",
+      "code": "58410-2",
+      "code_display": "Complete blood count",
+      "code_detail": "{\"system\":\"http://loinc.org\",\"code\":\"58410-2\",\"display\":\"Complete blood count\"}",
+      "status": "final",
+      "effectiveDate": "2021-06-15T09:00:00Z",
+      "issued": "2021-06-16T12:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc16",
+      "performerId": "pract7",
+      "organizationId": "org3",
+      "result": [
+        {
+          "reference": "Observation/obs-cbc1",
+          "display": "Hemoglobin 14.5 g/dL"
+        },
+        {
+          "reference": "Observation/obs-cbc2",
+          "display": "WBC 7.0 x10^3/uL"
+        }
+      ],
+      "createdAt": "2021-06-15T08:00:00Z",
+      "updatedAt": "2021-06-16T12:00:00Z"
+    },
+    {
+      "id": "dr3",
+      "code_system": "http://loinc.org",
+      "code": "24331-1",
+      "code_display": "Lipid panel",
+      "code_detail": "{\"system\":\"http://loinc.org\",\"code\":\"24331-1\",\"display\":\"Lipid panel\"}",
+      "status": "final",
+      "effectiveDate": "2022-06-15T09:00:00Z",
+      "issued": "2022-06-16T12:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc17",
+      "performerId": "pract7",
+      "organizationId": "org3",
+      "result": [
+        {
+          "reference": "Observation/obs-lipid4",
+          "display": "Cholesterol total 195 mg/dL"
+        },
+        {
+          "reference": "Observation/obs-lipid5",
+          "display": "LDL 115 mg/dL"
+        },
+        {
+          "reference": "Observation/obs-lipid6",
+          "display": "HDL 52 mg/dL"
+        }
+      ],
+      "createdAt": "2022-06-15T08:00:00Z",
+      "updatedAt": "2022-06-16T12:00:00Z"
+    },
+    {
+      "id": "dr4",
+      "code_system": "http://loinc.org",
+      "code": "58410-2",
+      "code_display": "Complete blood count",
+      "code_detail": "{\"system\":\"http://loinc.org\",\"code\":\"58410-2\",\"display\":\"Complete blood count\"}",
+      "status": "final",
+      "effectiveDate": "2022-06-15T09:00:00Z",
+      "issued": "2022-06-16T12:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc17",
+      "performerId": "pract7",
+      "organizationId": "org3",
+      "result": [
+        {
+          "reference": "Observation/obs-cbc3",
+          "display": "Hemoglobin 14.7 g/dL"
+        },
+        {
+          "reference": "Observation/obs-cbc4",
+          "display": "WBC 6.8 x10^3/uL"
+        }
+      ],
+      "createdAt": "2022-06-15T08:00:00Z",
+      "updatedAt": "2022-06-16T12:00:00Z"
+    },
+    {
+      "id": "dr5",
+      "code_system": "http://loinc.org",
+      "code": "24331-1",
+      "code_display": "Lipid panel",
+      "code_detail": "{\"system\":\"http://loinc.org\",\"code\":\"24331-1\",\"display\":\"Lipid panel\"}",
+      "status": "final",
+      "effectiveDate": "2023-06-15T09:00:00Z",
+      "issued": "2023-06-16T12:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc18",
+      "performerId": "pract7",
+      "organizationId": "org3",
+      "result": [
+        {
+          "reference": "Observation/obs-lipid7",
+          "display": "Cholesterol total 190 mg/dL"
+        },
+        {
+          "reference": "Observation/obs-lipid8",
+          "display": "LDL 110 mg/dL"
+        },
+        {
+          "reference": "Observation/obs-lipid9",
+          "display": "HDL 55 mg/dL"
+        }
+      ],
+      "createdAt": "2023-06-15T08:00:00Z",
+      "updatedAt": "2023-06-16T12:00:00Z"
+    },
+    {
+      "id": "dr6",
+      "code_system": "http://loinc.org",
+      "code": "58410-2",
+      "code_display": "Complete blood count",
+      "code_detail": "{\"system\":\"http://loinc.org\",\"code\":\"58410-2\",\"display\":\"Complete blood count\"}",
+      "status": "final",
+      "effectiveDate": "2023-06-15T09:00:00Z",
+      "issued": "2023-06-16T12:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc18",
+      "performerId": "pract7",
+      "organizationId": "org3",
+      "result": [
+        {
+          "reference": "Observation/obs-cbc5",
+          "display": "Hemoglobin 14.6 g/dL"
+        },
+        {
+          "reference": "Observation/obs-cbc6",
+          "display": "WBC 7.2 x10^3/uL"
+        }
+      ],
+      "createdAt": "2023-06-15T08:00:00Z",
+      "updatedAt": "2023-06-16T12:00:00Z"
+    },
+    {
+      "id": "dr7",
+      "code_system": "http://loinc.org",
+      "code": "24331-1",
+      "code_display": "Lipid panel",
+      "code_detail": "{\"system\":\"http://loinc.org\",\"code\":\"24331-1\",\"display\":\"Lipid panel\"}",
+      "status": "final",
+      "effectiveDate": "2023-06-15T09:00:00Z",
+      "issued": "2024-06-15T09:00:00Z",
+      "updatedAt": "2024-06-15T09:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc19",
+      "performerId": "pract7",
+      "organizationId": "org3",
+      "result": [
+        {
+          "reference": "Observation/obs-lipid-10",
+          "display": "Cholesterol total"
+        },
+        {
+          "reference": "Observation/obs-lipid-11",
+          "display": "LDL"
+        },
+        {
+          "reference": "Observation/obs-lipid-12",
+          "display": "HDL"
+        }
+      ],
+      "createdAt": "2024-06-15T08:00:00Z",
+      "updatedAt": "2024-06-15T08:00:00Z"
+    },
+    {
+      "id": "dr8",
+      "code_system": "http://loinc.org",
+      "code": "58410-2",
+      "code_display": "Complete blood count",
+      "code_detail": "{\"system\":\"http://loinc.org\",\"code\":\"58410-2\",\"display\":\"Complete blood count\"}",
+      "status": "final",
+      "effectiveDate": "2024-06-15T09:00:00Z",
+      "issued": "2024-06-16T11:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc19",
+      "performerId": "pract7",
+      "organizationId": "org3",
+      "result": [
+        {
+          "reference": "Observation/obs-cbc-7",
+          "display": "Hemoglobin 14.4 g/dL"
+        },
+        {
+          "reference": "Observation/obs-cbc-8",
+          "display": "WBC 7.1 x10^3/uL"
+        }
+      ],
+      "createdAt": "2024-06-15T08:00:00Z",
+      "updatedAt": "2024-06-16T11:00:00Z"
+    },
+    {
+      "id": "dr9",
+      "code_system": "http://loinc.org",
+      "code": "24331-1",
+      "code_display": "Lipid panel",
+      "code_detail": "{\"system\":\"http://loinc.org\",\"code\":\"24331-1\",\"display\":\"Lipid panel\"}",
+      "status": "preliminary",
+      "effectiveDate": "2025-06-15T09:00:00Z",
+      "issued": "2025-06-16T12:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc20",
+      "performerId": "pract7",
+      "organizationId": "org3",
+      "result": [
+        {
+          "reference": "Observation/obs-lipid-13",
+          "display": "Cholesterol total 180 mg/dL"
+        },
+        {
+          "reference": "Observation/obs-lipid-14",
+          "display": "LDL 100 mg/dL"
+        },
+        {
+          "reference": "Observation/obs-lipid-15",
+          "display": "HDL 60 mg/dL"
+        }
+      ],
+      "createdAt": "2025-06-15T08:00:00Z",
+      "updatedAt": "2025-06-16T12:00:00Z"
+    },
+    {
+      "id": "dr10",
+      "code_system": "http://loinc.org",
+      "code": "58410-2",
+      "code_display": "Complete blood count",
+      "code_detail": "{\"system\":\"http://loinc.org\",\"code\":\"58410-2\",\"display\":\"Complete blood count\"}",
+      "status": "preliminary",
+      "effectiveDate": "2025-06-15T09:00:00Z",
+      "issued": "2025-06-16T12:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc20",
+      "performerId": "pract7",
+      "organizationId": "org3",
+      "result": [
+        {
+          "reference": "Observation/obs-cbc-9",
+          "display": "Hemoglobin 14.3 g/dL"
+        },
+        {
+          "reference": "Observation/obs-cbc-10",
+          "display": "WBC 7.0 x10^3/uL"
+        }
+      ],
+      "createdAt": "2025-06-15T08:00:00Z",
+      "updatedAt": "2025-06-16T12:00:00Z"
+    }
+  ]
+}

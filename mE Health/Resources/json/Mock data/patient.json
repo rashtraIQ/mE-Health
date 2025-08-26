@@ -1,0 +1,17 @@
+{
+  "patients": [
+    {
+      "id": "patient1",
+      "name": "Prithwi Thakuria",
+      "birthDate": "1970-06-18",
+      "gender": "male",
+      "address": "{\"line\":[\"71 Palomino Drive\"],\"city\":\"North Andover\",\"state\":\"MA\",\"postalCode\":\"01845\"}",
+      "telecom": "{\"system\":\"phone\",\"value\":\"+1-978-555-1234\"};{\"system\":\"email\",\"value\":\"prithwi.thakuria@example.com\"}",
+      "maritalStatus": "married",
+      "identifier": "{\"system\":\"http://hospital.org/mrn\",\"value\":\"MRN123456\"}",
+      "communication": "{\"language\":{\"coding\":[{\"system\":\"urn:ietf:bcp:47\",\"code\":\"en-US\",\"display\":\"English\"}]}}",
+      "createdAt": "2025-06-01T00:00:00Z",
+      "updatedAt": "2021-06-24T00:00:00Z"
+    }
+  ]
+}

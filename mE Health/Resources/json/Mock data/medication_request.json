@@ -1,0 +1,36 @@
+{
+    "medicationRequests": [
+        {
+            "id": "medreq1",
+            "medicationCode_system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "medicationCode_code": "197380",
+            "medicationCode_display": "Cetirizine 10 mg",
+            "medicationCode": "{\"system\":\"http://www.nlm.nih.gov/research/umls/rxnorm\",\"code\":\"197380\",\"display\":\"Cetirizine 10 mg\"}",
+            "description": "Cetirizine 10 mg",
+            "status": "active",
+            "authoredOn": "2021-07-01T14:00:00Z",
+            "dosageInstruction": "{\"text\":\"Take 1 tablet daily as needed for allergy symptoms\"}",
+            "reasonCode": "{\"system\":\"http://hl7.org/fhir/sid/icd-10\",\"code\":\"J30.1\",\"display\":\"Seasonal allergic rhinitis\"}",
+            "patientId": "patient1",
+            "encounterId": "enc1",
+            "createdAt": "2021-07-01T13:00:00Z",
+            "updatedAt": "2021-07-01T14:15:00Z"
+        },
+        {
+            "id": "medreq2",
+            "medicationCode_system": "http://www.nlm.nih.gov/research/umls/rxnorm",
+            "medicationCode_code": "197806",
+            "medicationCode_display": "Lisinopril 10 mg",
+            "medicationCode": "{\"system\":\"http://www.nlm.nih.gov/research/umls/rxnorm\",\"code\":\"197806\",\"display\":\"Lisinopril 10 mg\"}",
+            "description": "Lisinopril 10 mg",
+            "status": "active",
+            "authoredOn": "2021-06-15T09:00:00Z",
+            "dosageInstruction": "{\"text\":\"Take 1 tablet daily for blood pressure control\"}",
+            "reasonCode": "{\"system\":\"http://hl7.org/fhir/sid/icd-10\",\"code\":\"I10\",\"display\":\"Essential hypertension\"}",
+            "patientId": "patient1",
+            "encounterId": "enc16",
+            "createdAt": "2021-06-15T08:00:00Z",
+            "updatedAt": "2021-06-15T09:15:00Z"
+        }
+    ]
+}

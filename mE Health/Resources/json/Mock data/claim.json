@@ -1,0 +1,148 @@
+{
+  "claims": [
+    {
+      "claimId": "claim1",
+      "totalAmount": 150.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2021-06-15T09:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org3",
+      "createdAt": "2021-06-15T08:00:00Z",
+      "updatedAt": "2021-06-15T09:15:00Z"
+    },
+    {
+      "claimId": "claim2",
+      "totalAmount": 100.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2021-07-01T14:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org1",
+      "createdAt": "2021-07-01T13:00:00Z",
+      "updatedAt": "2021-07-01T14:15:00Z"
+    },
+    {
+      "claimId": "claim3",
+      "totalAmount": 1000.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2021-09-01T10:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org1",
+      "createdAt": "2021-09-01T09:00:00Z",
+      "updatedAt": "2021-09-01T10:15:00Z"
+    },
+    {
+      "claimId": "claim4",
+      "totalAmount": 200.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2021-09-15T08:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org1",
+      "createdAt": "2021-09-15T07:00:00Z",
+      "updatedAt": "2021-09-15T08:15:00Z"
+    },
+    {
+      "claimId": "claim5",
+      "totalAmount": 3000.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2023-02-15T08:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org2",
+      "createdAt": "2023-02-15T07:00:00Z",
+      "updatedAt": "2023-02-15T16:15:00Z"
+    },
+    {
+      "claimId": "claim6",
+      "totalAmount": 150.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2022-06-15T09:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org3",
+      "createdAt": "2022-06-15T08:00:00Z",
+      "updatedAt": "2022-06-15T09:15:00Z"
+    },
+    {
+      "claimId": "claim7",
+      "totalAmount": 150.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2023-06-15T09:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org3",
+      "createdAt": "2023-06-15T08:00:00Z",
+      "updatedAt": "2023-06-15T09:15:00Z"
+    },
+    {
+      "claimId": "claim8",
+      "totalAmount": 150.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2024-06-15T09:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org3",
+      "createdAt": "2024-06-15T08:00:00Z",
+      "updatedAt": "2024-06-15T09:15:00Z"
+    },
+    {
+      "claimId": "claim9",
+      "totalAmount": 150.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2025-06-15T09:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org3",
+      "createdAt": "2025-06-15T08:00:00Z",
+      "updatedAt": "2025-06-15T09:15:00Z"
+    },
+    {
+      "claimId": "claim10",
+      "totalAmount": 4000.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2023-11-15T08:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org2",
+      "createdAt": "2023-11-15T07:00:00Z",
+      "updatedAt": "2023-11-15T16:15:00Z"
+    },
+    {
+      "claimId": "claim11",
+      "totalAmount": 200.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2024-10-15T10:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org1",
+      "createdAt": "2024-10-15T09:00:00Z",
+      "updatedAt": "2024-10-15T10:15:00Z"
+    },
+    {
+      "claimId": "claim12",
+      "totalAmount": 5000.00,
+      "totalCurrency": "USD",
+      "status": "active",
+      "createdDate": "2024-11-15T08:00:00Z",
+      "insurance": "{\"sequence\":1,\"focal\":true,\"coverage\":{\"reference\":\"Coverage/cov1\",\"display\":\"Blue Cross Blue Shield\"}}",
+      "patientId": "patient1",
+      "organizationId": "org2",
+      "createdAt": "2024-11-15T07:00:00Z",
+      "updatedAt": "2024-11-15T16:15:00Z"
+    }
+  ]
+}

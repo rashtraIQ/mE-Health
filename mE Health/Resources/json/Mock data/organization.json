@@ -1,0 +1,22 @@
+{
+  "organizations": [
+    {
+      "id": "org1",
+      "name": "Lawrence General Hospital",
+      "telecom": "phone:+1-978-683-4000;email:info@lawrencegeneral.org",
+      "address": "1 General Street, Lawrence, MA 01841"
+    },
+    {
+      "id": "org2",
+      "name": "Massachusetts General Hospital",
+      "telecom": "phone:+1-617-726-2000;email:info@mgh.harvard.edu",
+      "address": "55 Fruit Street, Boston, MA 02114"
+    },
+    {
+      "id": "org3",
+      "name": "Middleton Family Practice",
+      "telecom": "phone:+1-978-783-5000;email:info@middletonfamily.org",
+      "address": "147 South Main Street, Middleton, MA 01949"
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="23788.4" systemVersion="24F74" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithSwiftData="YES" userDefinedModelVersionIdentifier="">
+    <entity name="AllergyEntity" representedClassName="AllergyEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="allerygy_id" optional="YES" attributeType="String"/>
+        <attribute name="clinicalStatus" optional="YES" attributeType="String"/>
+        <attribute name="codeDisplay" optional="YES" attributeType="String"/>
+        <attribute name="codeSystem" optional="YES" attributeType="String"/>
+        <attribute name="createdAt" optional="YES" attributeType="String"/>
+        <attribute name="encounterId" optional="YES" attributeType="String"/>
+        <attribute name="patientId" optional="YES" attributeType="String"/>
+        <attribute name="rawCode" optional="YES" attributeType="String"/>
+        <attribute name="recordedDate" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="AppointmentEntryEntity" representedClassName="AppointmentEntryEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="resource" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AppointmentResourceEntity"/>
+    </entity>
+    <entity name="AppointmentResourceEntity" representedClassName="AppointmentResourceEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="created" optional="YES" attributeType="String"/>
+        <attribute name="end" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="minutesDuration" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="patientInstruction" optional="YES" attributeType="String"/>
+        <attribute name="resourceType" optional="YES" attributeType="String"/>
+        <attribute name="start" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <relationship name="identifier" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IdentifierEntity"/>
+    </entity>
+    <entity name="AppoitmentEntity" representedClassName="AppoitmentEntity" syncable="YES" codeGenerationType="class">
+        <relationship name="entry" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="AppointmentEntryEntity"/>
+    </entity>
+    <entity name="ClinicalStatusEntity" representedClassName="ClinicalStatusEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="coding" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CodingEntity"/>
+    </entity>
+    <entity name="CodingEntity" representedClassName="CodingEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="display" optional="YES" attributeType="String"/>
+        <attribute name="system" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ConditionCategoryEntity" representedClassName="ConditionCategoryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="coding" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CodingEntity"/>
+    </entity>
+    <entity name="ConditionCodeEntity" representedClassName="ConditionCodeEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="coding" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CodingEntity"/>
+    </entity>
+    <entity name="ConditionResourceEntity" representedClassName="ConditionResourceEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="onsetDateTime" optional="YES" attributeType="String"/>
+        <attribute name="recordedDate" optional="YES" attributeType="String"/>
+        <attribute name="resourceType" optional="YES" attributeType="String"/>
+        <relationship name="category" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ConditionCategoryEntity"/>
+        <relationship name="clinicalStatus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ClinicalStatusEntity"/>
+        <relationship name="code" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConditionCodeEntity"/>
+        <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConditionSubjectEntity"/>
+        <relationship name="verificationStatus" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="VerificationStatusEntity"/>
+    </entity>
+    <entity name="ConditionSubjectEntity" representedClassName="ConditionSubjectEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="display" optional="YES" attributeType="String"/>
+        <attribute name="reference" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ConsentEntity" representedClassName="ConsentEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="resourceType" optional="YES" attributeType="String"/>
+        <attribute name="total" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ConsentEntryEntity"/>
+    </entity>
+    <entity name="ConsentEntryEntity" representedClassName="ConsentEntryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="fullUrl" optional="YES" attributeType="String"/>
+        <relationship name="consent" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConsentEntity"/>
+        <relationship name="resource" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConsentResourceEntity"/>
+    </entity>
+    <entity name="ConsentIssueEntity" representedClassName="ConsentIssueEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="code" optional="YES" attributeType="String"/>
+        <attribute name="diagnostics" optional="YES" attributeType="String"/>
+        <attribute name="severity" optional="YES" attributeType="String"/>
+        <relationship name="details" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DetailsEntity"/>
+        <relationship name="resource" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConsentResourceEntity"/>
+    </entity>
+    <entity name="ConsentResourceEntity" representedClassName="ConsentResourceEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="resourceType" optional="YES" attributeType="String"/>
+        <relationship name="entry" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ConsentEntryEntity"/>
+        <relationship name="issues" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="ConsentIssueEntity"/>
+    </entity>
+    <entity name="DetailsEntity" representedClassName="DetailsEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="coding" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CodingEntity"/>
+    </entity>
+    <entity name="DispenseRequestEntity" representedClassName="DispenseRequestEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="numberOfRepeatsAllowed" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+    </entity>
+    <entity name="DosageInstructionEntity" representedClassName="DosageInstructionEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="EncounterEntity" representedClassName="EncounterEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="display" optional="YES" attributeType="String"/>
+        <attribute name="reference" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="EntryEntity" representedClassName="EntryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="fullUrl" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="IdentifierEntity" representedClassName="IdentifierEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="system" optional="YES" attributeType="String"/>
+        <attribute name="use" optional="YES" attributeType="String"/>
+        <attribute name="value" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="MedicationReferenceEntity" representedClassName="MedicationReferenceEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="display" optional="YES" attributeType="String"/>
+        <attribute name="reference" optional="YES" attributeType="String"/>
+        <attribute name="subject" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="NameEntity" representedClassName="NameEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="family" optional="YES" attributeType="String"/>
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <attribute name="use" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PatientEntity" representedClassName="PatientEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="birthDate" optional="YES" attributeType="String"/>
+        <attribute name="gender" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <relationship name="name" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="NameEntity"/>
+    </entity>
+    <entity name="PractitionerEntity" representedClassName="PractitionerEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="display" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="reference" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="PractitionerRoleEntity" representedClassName="PractitionerRoleEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="resourceType" optional="YES" attributeType="String"/>
+        <attribute name="type" optional="YES" attributeType="String"/>
+        <relationship name="entries" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="EntryEntity"/>
+    </entity>
+    <entity name="RequesterEntity" representedClassName="RequesterEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="display" optional="YES" attributeType="String"/>
+        <attribute name="reference" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="ResourceEntity" representedClassName="ResourceEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="active" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="resourceType" optional="YES" attributeType="String"/>
+        <attribute name="status" optional="YES" attributeType="String"/>
+        <relationship name="dispenseRequest" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="DispenseRequestEntity"/>
+        <relationship name="dosageInstructions" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DosageInstructionEntity"/>
+        <relationship name="encounter" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="EncounterEntity"/>
+        <relationship name="identifiers" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="IdentifierEntity"/>
+        <relationship name="medicationReference" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MedicationReferenceEntity"/>
+        <relationship name="practitioner" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="DosageInstructionEntity"/>
+        <relationship name="requester" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RequesterEntity"/>
+        <relationship name="subject" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="MedicationReferenceEntity"/>
+    </entity>
+    <entity name="VerificationStatusEntity" representedClassName="VerificationStatusEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="text" optional="YES" attributeType="String"/>
+        <relationship name="coding" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CodingEntity"/>
+    </entity>
+</model>

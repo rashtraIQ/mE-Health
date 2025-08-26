@@ -1,0 +1,95 @@
+{
+  "immunizations": [
+    {
+      "id": "imm1",
+      "vaccineCode_system": "http://hl7.org/fhir/sid/cvx",
+      "vaccineCode_code": "88",
+      "vaccineCode_display": "Influenza vaccine",
+      "vaccineCode": "{\"system\":\"http://hl7.org/fhir/sid/cvx\",\"code\":\"88\",\"display\":\"Influenza vaccine\"}",
+      "status": "completed",
+      "occurrenceDate": "2021-07-01T14:15:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc1",
+      "createdAt": "2021-07-01T13:00:00Z",
+      "updatedAt": "2021-07-01T14:30:00Z"
+    },
+    {
+      "id": "imm2",
+      "vaccineCode_system": "http://hl7.org/fhir/sid/cvx",
+      "vaccineCode_code": "207",
+      "vaccineCode_display": "COVID-19 vaccine, mRNA, Pfizer, 1st dose",
+      "vaccineCode": "{\"system\":\"http://hl7.org/fhir/sid/cvx\",\"code\":\"207\",\"display\":\"COVID-19 vaccine, mRNA, Pfizer, 1st dose\"}",
+      "status": "completed",
+      "occurrenceDate": "2021-07-01T14:20:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc1",
+      "createdAt": "2021-07-01T13:00:00Z",
+      "updatedAt": "2021-07-01T14:30:00Z"
+    },
+    {
+      "id": "imm3",
+      "vaccineCode_system": "http://hl7.org/fhir/sid/cvx",
+      "vaccineCode_code": "207",
+      "vaccineCode_display": "COVID-19 vaccine, mRNA, Pfizer, 2nd dose",
+      "vaccineCode": "{\"system\":\"http://hl7.org/fhir/sid/cvx\",\"code\":\"207\",\"display\":\"COVID-19 vaccine, mRNA, Pfizer, 2nd dose\"}",
+      "status": "completed",
+      "occurrenceDate": "2022-08-05T10:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc15",
+      "createdAt": "2022-08-05T09:00:00Z",
+      "updatedAt": "2022-08-05T10:15:00Z"
+    },
+    {
+      "id": "imm4",
+      "vaccineCode_system": "http://hl7.org/fhir/sid/cvx",
+      "vaccineCode_code": "115",
+      "vaccineCode_display": "Tdap vaccine",
+      "vaccineCode": "{\"system\":\"http://hl7.org/fhir/sid/cvx\",\"code\":\"115\",\"display\":\"Tdap vaccine\"}",
+      "status": "completed",
+      "occurrenceDate": "2022-10-15T11:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc7",
+      "createdAt": "2022-10-15T10:00:00Z",
+      "updatedAt": "2022-10-15T11:15:00Z"
+    },
+    {
+      "id": "imm5",
+      "vaccineCode_system": "http://hl7.org/fhir/sid/cvx",
+      "vaccineCode_code": "187",
+      "vaccineCode_display": "Shingles vaccine, recombinant, 1st dose",
+      "vaccineCode": "{\"system\":\"http://hl7.org/fhir/sid/cvx\",\"code\":\"187\",\"display\":\"Shingles vaccine, recombinant, 1st dose\"}",
+      "status": "completed",
+      "occurrenceDate": "2023-06-15T09:30:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc18",
+      "createdAt": "2023-06-15T08:30:00Z",
+      "updatedAt": "2023-06-15T09:45:00Z"
+    },
+    {
+      "id": "imm6",
+      "vaccineCode_system": "http://hl7.org/fhir/sid/cvx",
+      "vaccineCode_code": "187",
+      "vaccineCode_display": "Shingles vaccine, recombinant, 2nd dose",
+      "vaccineCode": "{\"system\":\"http://hl7.org/fhir/sid/cvx\",\"code\":\"187\",\"display\":\"Shingles vaccine, recombinant, 2nd dose\"}",
+      "status": "completed",
+      "occurrenceDate": "2023-09-10T14:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc18",
+      "createdAt": "2023-09-10T13:00:00Z",
+      "updatedAt": "2023-09-10T14:15:00Z"
+    },
+    {
+      "id": "imm7",
+      "vaccineCode_system": "http://hl7.org/fhir/sid/cvx",
+      "vaccineCode_code": "215",
+      "vaccineCode_display": "Pneumococcal conjugate vaccine, PCV20",
+      "vaccineCode": "{\"system\":\"http://hl7.org/fhir/sid/cvx\",\"code\":\"215\",\"display\":\"Pneumococcal conjugate vaccine, PCV20\"}",
+      "status": "completed",
+      "occurrenceDate": "2024-06-15T13:00:00Z",
+      "patientId": "patient1",
+      "encounterId": "enc19",
+      "createdAt": "2024-06-15T12:00:00Z",
+      "updatedAt": "2024-06-15T13:15:00Z"
+    }
+  ]
+}

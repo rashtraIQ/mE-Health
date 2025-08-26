@@ -1,0 +1,16 @@
+{
+  "allergyIntolerances": [
+    {
+      "id": "allergy1",
+      "code_system": "http://snomed.info/sct",
+      "code_display": "Pollen allergy",
+      "code": "{\"system\":\"http://snomed.info/sct\",\"code\":\"418689008\",\"display\":\"Pollen allergy\"}",
+      "clinicalStatus": "Active",
+      "patientId": "patient1",
+      "encounterId": "enc1",
+      "recordedDate": "2021-07-01T14:00:00Z",
+      "createdAt": "2021-07-01T13:00:00Z",
+      "updatedAt": "2021-07-01T14:20:00Z"
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "practitioners": [
+    {
+      "id": "pract1",
+      "name": "Dr. Emily Carter, MD",
+      "specialty": "Family Medicine",
+      "telecom": "phone:+1-978-683-4000;email:emily.carter@lawrencegeneral.org",
+      "qualification": "{\"code\":{\"coding\":[{\"system\":\"http://snomed.info/sct\",\"code\":\"394814009\",\"display\":\"General practice\"}],\"text\":\"MD, Board Certified in Family Medicine\"}}",
+      "createdAt": "2025-07-19T00:00:00Z",
+      "updatedAt": "2025-06-24T00:00:00Z"
+    },
+    {
+      "id": "pract2",
+      "name": "Dr. Rajesh Patel, MD",
+      "specialty": "Allergy and Immunology",
+      "telecom": "phone:+1-978-683-4000;email:rajesh.patel@lawrencegeneral.org",
+      "qualification": "{\"code\":{\"coding\":[{\"system\":\"http://snomed.info/sct\",\"code\":\"394805004\",\"display\":\"Allergy and immunology\"}],\"text\":\"MD, Fellowship in Allergy\"}}",
+      "createdAt": "2021-01-01T00:00:00Z",
+      "updatedAt": "2021-07-01T00:00:00Z"
+    },
+    {
+      "id": "pract3",
+      "name": "Dr. Susan Lee, MD",
+      "specialty": "Pulmonary Medicine",
+      "telecom": "phone:+1-978-683-4000;email:susan.lee@lawrencegeneral.org",
+      "qualification": "{\"code\":{\"coding\":[{\"system\":\"http://snomed.info/sct\",\"code\":\"394586005\",\"display\":\"Pulmonology\"}],\"text\":\"MD, Board Certified in Pulmonary Medicine\"}}",
+      "createdAt": "2021-01-01T00:00:00Z",
+      "updatedAt": "2021-09-01T00:00:00Z"
+    },
+    {
+      "id": "pract4",
+      "name": "Dr. Michael Nguyen, MD",
+      "specialty": "Cardiology",
+      "telecom": "phone:+1-617-726-2000;email:michael.nguyen@mgh.harvard.edu",
+      "qualification": "{\"code\":{\"coding\":[{\"system\":\"http://snomed.info/sct\",\"code\":\"394579002\",\"display\":\"Cardiology\"}],\"text\":\"MD, Fellowship in Cardiology\"}}",
+      "createdAt": "2021-01-01T00:00:00Z",
+      "updatedAt": "2022-10-01T00:00:00Z"
+    },
+    {
+      "id": "pract5",
+      "name": "Dr. Laura Kim, MD",
+      "specialty": "Diagnostic Radiology",
+      "telecom": "phone:+1-978-683-4000;email:laura.kim@lawrencegeneral.org",
+      "qualification": "{\"code\":{\"coding\":[{\"system\":\"http://snomed.info/sct\",\"code\":\"394595002\",\"display\":\"Radiology\"}],\"text\":\"MD, Board Certified in Radiology\"}}",
+      "createdAt": "2021-01-01T00:00:00Z",
+      "updatedAt": "2022-11-15T00:00:00Z"
+    },
+    {
+      "id": "pract6",
+      "name": "Dr. James O’Connor, MD",
+      "specialty": "Orthopedic Surgery",
+      "telecom": "phone:+1-617-726-2000;email:james.oconnor@mgh.harvard.edu",
+      "qualification": "{\"code\":{\"coding\":[{\"system\":\"http://snomed.info/sct\",\"code\":\"394801008\",\"display\":\"Orthopedic surgery\"}],\"text\":\"MD, Fellowship in Orthopedics\"}}",
+      "createdAt": "2021-01-01T00:00:00Z",
+      "updatedAt": "2023-02-15T00:00:00Z"
+    },
+    {
+      "id": "pract7",
+      "name": "Dr. Richard Allara, MD",
+      "specialty": "Family Medicine",
+      "telecom": "phone:+1-978-783-5000;email:richard.allara@middletonfamily.org",
+      "qualification": "{\"code\":{\"coding\":[{\"system\":\"http://snomed.info/sct\",\"code\":\"394814009\",\"display\":\"General practice\"}],\"text\":\"MD, Board Certified in Family Medicine\"}}",
+      "createdAt": "2021-01-01T00:00:00Z",
+      "updatedAt": "2021-06-15T00:00:00Z"
+    }
+  ]
+}

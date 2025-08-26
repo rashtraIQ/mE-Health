@@ -1,0 +1,46 @@
+{
+  "procedures": [
+    {
+      "id": "proc1",
+      "code_system": "http://snomed.info/sct",
+      "code": "180256009",
+      "code_display": "Arthroscopic meniscectomy",
+      "code": "{\"system\":\"http://snomed.info/sct\",\"code\":\"180256009\",\"display\":\"Arthroscopic meniscectomy\"}",
+      "performedDate": "2023-02-15T08:00:00Z",
+      "reasonCode": "{\"system\":\"http://hl7.org/fhir/sid/icd-10\",\"code\":\"S83.241A\",\"display\":\"Medial meniscus tear, right knee\"}",
+      "patientId": "patient1",
+      "encounterId": "enc9",
+      "createdAt": "2023-02-15T07:00:00Z",
+      "updatedAt": "2023-02-15T16:00:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "proc2",
+      "code_system": "http://snomed.info/sct",
+      "code": "180256009",
+      "code_display": "Revision arthroscopic meniscectomy",
+      "code": "{\"system\":\"http://snomed.info/sct\",\"code\":\"180256009\",\"display\":\"Revision arthroscopic meniscectomy\"}",
+      "performedDate": "2023-11-15T08:00:00Z",
+      "reasonCode": "{\"system\":\"http://hl7.org/fhir/sid/icd-10\",\"code\":\"S83.241A\",\"display\":\"Medial meniscus tear, right knee\"}",
+      "patientId": "patient1",
+      "encounterId": "enc11",
+      "createdAt": "2023-11-15T07:00:00Z",
+      "updatedAt": "2023-11-15T16:00:00Z",
+      "status": "completed"
+    },
+    {
+      "id": "proc3",
+      "code_system": "http://snomed.info/sct",
+      "code": "177765008",
+      "code_display": "Arthroscopic debridement",
+      "code": "{\"system\":\"http://snomed.info/sct\",\"code\":\"177765008\",\"display\":\"Arthroscopic debridement\"}",
+      "performedDate": "2024-11-15T08:00:00Z",
+      "reasonCode": "{\"system\":\"http://hl7.org/fhir/sid/icd-10\",\"code\":\"M24.851\",\"display\":\"Joint disorder, right knee, due to scar tissue\"}",
+      "patientId": "patient1",
+      "encounterId": "enc13",
+      "createdAt": "2024-11-15T07:00:00Z",
+      "updatedAt": "2024-11-15T16:00:00Z",
+      "status": "completed"
+    }
+  ]
+}
