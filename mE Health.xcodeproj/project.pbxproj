@@ -94,6 +94,7 @@
 		5CA33CE72DCA46FB00064A7B = {
 			isa = PBXGroup;
 			children = (
+				A2B331B82E5DCA4400A88F04 /* test */,
 				726B32CA2E40B11600C3F0A2 /* Goal+CoreDataClass.swift */,
 				726B32CB2E40B11600C3F0A2 /* Goal+CoreDataProperties.swift */,
 				72483F932E3A894600806301 /* Advicedata+CoreDataClass.swift */,
@@ -113,6 +114,13 @@
 				5CA33D0A2DCA46FC00064A7B /* mE HealthUITests.xctest */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		A2B331B82E5DCA4400A88F04 /* test */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
