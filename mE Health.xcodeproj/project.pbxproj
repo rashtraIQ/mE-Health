@@ -15,6 +15,7 @@
 		72483F982E3A894600806301 /* Advicedata+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72483F942E3A894600806301 /* Advicedata+CoreDataProperties.swift */; };
 		726B32CC2E40B11600C3F0A2 /* Goal+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726B32CA2E40B11600C3F0A2 /* Goal+CoreDataClass.swift */; };
 		726B32CD2E40B11600C3F0A2 /* Goal+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 726B32CB2E40B11600C3F0A2 /* Goal+CoreDataProperties.swift */; };
+		A2B331BA2E5DCAFF00A88F04 /* testFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B331B92E5DCAFF00A88F04 /* testFile.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		72483F942E3A894600806301 /* Advicedata+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Advicedata+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		726B32CA2E40B11600C3F0A2 /* Goal+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataClass.swift"; sourceTree = "<group>"; };
 		726B32CB2E40B11600C3F0A2 /* Goal+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Goal+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A2B331B92E5DCAFF00A88F04 /* testFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testFile.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -119,6 +121,7 @@
 		A2B331B82E5DCA4400A88F04 /* test */ = {
 			isa = PBXGroup;
 			children = (
+				A2B331B92E5DCAFF00A88F04 /* testFile.swift */,
 			);
 			path = test;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				72483F972E3A894600806301 /* Advicedata+CoreDataClass.swift in Sources */,
+				A2B331BA2E5DCAFF00A88F04 /* testFile.swift in Sources */,
 				726B32CC2E40B11600C3F0A2 /* Goal+CoreDataClass.swift in Sources */,
 				726B32CD2E40B11600C3F0A2 /* Goal+CoreDataProperties.swift in Sources */,
 				72483F982E3A894600806301 /* Advicedata+CoreDataProperties.swift in Sources */,
