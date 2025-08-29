@@ -11,72 +11,91 @@ struct CurvedRectangle: Shape {
         var path = Path()
         path.move(to: CGPoint(x: rect.minX, y: rect.minY))
         path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
-        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY - 50))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY))
         path.addQuadCurve(
-            to: CGPoint(x: rect.minX, y: rect.maxY - 50),
-            control: CGPoint(x: rect.midX, y: rect.maxY + 80)
+            to: CGPoint(x: rect.minX, y: rect.maxY),
+            control: CGPoint(x: rect.midX, y: rect.maxY + 150)
         )
-        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+        path.closeSubpath()
         return path
     }
 }
+
+
 struct testFile: View {
     var body: some View {
-        VStack(spacing: 10){
-            VStack() {
-                Image("Picture1")
-                    .frame(width: UIScreen.main.bounds.width,
-                           height: UIScreen.main.bounds.height * 0.6)
-                    .clipShape(CurvedRectangle())
-                    .edgesIgnoringSafeArea(.top)
-                Spacer()
-            }
-            
-            Text("Welcome to the Revoultion")
-                .font(.system(size: 25, weight: .bold, design: .default))
-            Text("Where Others Build Apps,\n We Build Movements")
-                .multilineTextAlignment(.center)
-                .bold()
-                .opacity(0.8)
-            
-            Text("mEinstein isn't just another app. It's a revolution-\n where your data belongs to you, your AI learns from \n you, and your phone becomes your power. ")
-                .font(.system(size: 17, weight: .light, design: .default))
-                .multilineTextAlignment(.center)
-                .foregroundStyle(Color.black.opacity(0.8))
-                .padding(.bottom, 20)
-            
-            HStack(spacing:5){
-                Circle()
-                    .fill(Color.orange)
-                    .frame(width: 10, height: 10)
-                ForEach(0..<4, id: \.self) { _ in
-                    Circle()
-                        .fill(Color.gray.opacity(0.4))
-                        .frame(width: 10, height: 10)
+        NavigationStack{
+            VStack(spacing: 10){
+                VStack() {
+                    Image("Picture1")
+                        .resizable()
+                        .scaledToFill()
+                        .frame(maxWidth: .infinity,
+                               maxHeight: UIScreen.main.bounds.height * 0.45)
+                        .clipShape(CurvedRectangle())
+                        .ignoresSafeArea(edges: .top)
+                    Spacer()
                 }
-            }
-            Button {
+                Text("Welcome to the Revoultion")
+                    .foregroundStyle(Color(hex: "#232222"))
+                    .font(.montserrat(18))
+                    .bold()
+                    .lineSpacing(10)
                 
-            } label: {
-                ZStack{
+                
+                Text("Where Others Build Apps,\n We Build Movements")
+                    .foregroundStyle(Color(hex: "#333333"))
+                    .font(.montserrat(14))
+                    .fontWeight(.semibold)
+                    .multilineTextAlignment(.center)
+                    .lineSpacing(10)
+                
+                
+                Text("mEinstein isn't just another app. It's a revolution-\n where your data belongs to you, your AI learns from \n you, and your phone becomes your power. ")
+                    .font(.montserrat(12))
+                    .multilineTextAlignment(.center)
+                    .foregroundStyle(Color(hex: "#333333"))
+                    .lineSpacing(10)
+                    .padding(.bottom, 40)
+                
+                HStack(spacing:4){
                     Circle()
-                        .fill(Color.orange)
-                        .frame(width:50,height: 50)
-                    Image(systemName: "arrow.right")
-                        .foregroundStyle(Color.white)
+                        .fill(Color(hex: "#ff6606"))
+                        .frame(width: 6, height: 6)
+                    ForEach(0..<4, id: \.self) { _ in
+                        Circle()
+                            .fill(Color(hex: "DADADA"))
+                            .frame(width: 6, height: 6)
+                    }
                 }
-            }
-            
-            Button {
+                NavigationLink(destination: testFile2()
+                    .navigationBarBackButtonHidden(true)
+                    .navigationBarHidden(true)
+                ) {
+                    ZStack {
+                        Circle()
+                            .fill(Color(hex: "#ff6606"))
+                            .frame(width: 50, height: 50)
+                        Image(systemName: "arrow.right")
+                            .foregroundStyle(Color.white)
+                    }
+                }
                 
-            } label: {
-                Text("Skip")
-                    .bold(true)
-                    .foregroundStyle(Color.black)
+                NavigationLink(destination: WhenPressedSkip()) {
+                    Text("Skip")
+                        .font(.montserrat(14))
+                        .bold(true)
+                        .foregroundStyle(Color(hex: "#333333"))
+                        .lineSpacing(10)
+                }
             }
         }
+        
     }
 }
 #Preview {
     testFile()
 }
+
+
+
