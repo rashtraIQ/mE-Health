@@ -34,7 +34,7 @@ struct ProcedureDummyData: Codable,Identifiable, Equatable {
     var code: CodeInfo? {
         try? JSONDecoder().decode(CodeInfo.self, from: Data(rawCode.utf8))
     }
-
+    
     var reasonCode: CodeInfo? {
         try? JSONDecoder().decode(CodeInfo.self, from: Data(rawReasonCode.utf8))
     }
@@ -42,7 +42,7 @@ struct ProcedureDummyData: Codable,Identifiable, Equatable {
     var performedFormattedDate: String {
         let isoFormatter = ISO8601DateFormatter()
         isoFormatter.formatOptions = [.withInternetDateTime]
-
+        
         if let date = isoFormatter.date(from: performedDate) {
             let formatter = DateFormatter()
             formatter.dateFormat = "dd/MM/yyyy"
@@ -50,7 +50,7 @@ struct ProcedureDummyData: Codable,Identifiable, Equatable {
         }
         return performedDate
     }
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case codeSystem = "code_system"
@@ -66,8 +66,8 @@ struct ProcedureDummyData: Codable,Identifiable, Equatable {
     }
     
     
-
-
+    
+    
 }
 
 enum ProcedureStatus: String, Codable {
@@ -77,60 +77,63 @@ enum ProcedureStatus: String, Codable {
 
 
 struct ProcedureMainView: View {
-
+    
     let procedure: ProcedureDummyData
     let onTap: () -> Void
-        
-        var body: some View {
-
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack {
-                        Text(procedure.codeDisplay ?? "Unknown Code")
-                            .font(.montserrat(18, weight: .bold))
-                            .foregroundColor(.black)
-                        Spacer()
-                        
-                        if procedure.status ==  "completed" {
-                                Text("Completed")
-                                .font(.montserrat(9, weight: .semibold))
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 4)
-                                .background(Color(hex: "06C270").opacity(0.2))
-                                .foregroundColor(Color(hex: "06C270"))
-                                .clipShape(Capsule())
-                        }
-                    }
-                    .padding(.top,12)
-                    .padding(.horizontal,12)
-
-                    Text(procedure.performedFormattedDate)
-                         .font(.montserrat(14, weight: .regular))
+    
+    var body: some View {
+        Button(action: onTap) {
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Text(procedure.codeDisplay ?? "Unknown Code")
+                        .font(.montserrat(18, weight: .bold))
                         .foregroundColor(.black)
-                        .padding(.horizontal,12)
-
-                    Button(action: onTap) {
-                        Text("View Details")
-                            .font(.montserrat(14, weight: .semibold))
-                            .foregroundColor(.white)
-                            .frame(width:135)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .background(Color(hex: "FF6605"))
-                            .cornerRadius(20)
+                    Spacer()
+                    
+                    if procedure.status ==  "completed" {
+                        Text("Completed")
+                            .font(.montserrat(9, weight: .semibold))
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 4)
+                            .background(Color(hex: "06C270").opacity(0.2))
+                            .foregroundColor(Color(hex: "06C270"))
+                            .clipShape(Capsule())
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    .padding(.bottom, 12)
-                    .padding(.horizontal,12)
-
                 }
-                .padding(.leading, 12)
-                .background(Color.white)
-                .cornerRadius(8)
-                .shadow(radius: 4)
-
-            
+                .padding(.top,12)
+                .padding(.horizontal,12)
+                
+                Text(procedure.performedFormattedDate)
+                    .font(.montserrat(14, weight: .regular))
+                    .foregroundColor(.black)
+                    .padding(.horizontal,12)
+                
+                Button(action: onTap) {
+                    Text("View Details")
+                        .font(.montserrat(14, weight: .semibold))
+                        .foregroundColor(.white)
+                        .frame(width:135)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .background(Color(hex: "FF6605"))
+                        .cornerRadius(20)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .padding(.bottom, 12)
+                .padding(.horizontal,12)
+                
+            }
+            .padding(.leading, 12)
+            .background(Color.white)
+            .cornerRadius(8)
+            .shadow(radius: 4)
         }
-
+        .buttonStyle(PlainButtonStyle())
+        
+        
+        
+    }
+    
 }
 
 struct ProcedureSectionView: View {
@@ -146,7 +149,7 @@ struct ProcedureSectionView: View {
         formatter.formatOptions = [.withInternetDateTime]
         return formatter
     }
-
+    
     
     var filteredAppointments: [ProcedureDummyData] {
         procedure.filter { fileData in
@@ -173,13 +176,13 @@ struct ProcedureSectionView: View {
             let matchesStatus: Bool = activeFilters.isEmpty || activeFilters.contains {
                 $0.label.lowercased() == fileData.status.lowercased()
             }
-
+            
             return matchesSearch && matchesDate && matchesStatus
-
-
+            
+            
         }
     }
-
+    
     
     var body: some View {
         
@@ -195,9 +198,9 @@ struct ProcedureSectionView: View {
                     }
                 }
             }
-
+            
         }
         .padding(.horizontal)
-
+        
     }
 }

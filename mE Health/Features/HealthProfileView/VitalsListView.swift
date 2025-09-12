@@ -91,7 +91,7 @@ struct VitalsListView: View {
         
         
         var body: some View {
-
+            Button(action: onTap){
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
                         Text(vital.codeDisplay)
@@ -129,6 +129,8 @@ struct VitalsListView: View {
                 .background(Color.white)
                 .cornerRadius(8)
                 .shadow(radius: 4)
+            }
+            .buttonStyle(PlainButtonStyle())
 
             
         }

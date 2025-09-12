@@ -93,72 +93,130 @@ enum ConditionStatus: String {
 
 
 
+//struct ConditionListView: View {
+//
+//    let condition: ConditionDummyData
+//    let onTap: () -> Void
+//        
+//        
+//        var body: some View {
+//
+//                VStack(alignment: .leading, spacing: 8) {
+//                    HStack {
+//                        Text(condition.codeDisplay)
+//                            .font(.montserrat(18, weight: .bold))
+//                            .foregroundColor(.black)
+//                        Spacer()
+//                            
+//                        if condition.clinicalStatus ==  "active" {
+//                            Text("Active")
+//                                .font(.montserrat(9, weight: .semibold))
+//                                .padding(.horizontal, 12)
+//                                .padding(.vertical, 4)
+//                                .background(Color(hex: "06C270").opacity(0.2))
+//                                .foregroundColor(Color(hex: "06C270"))
+//                                .clipShape(Capsule())
+//
+//                        }
+//                        else  {
+//                            Text("Resolved")
+//                                .font(.montserrat(9, weight: .semibold))
+//                                .padding(.horizontal, 12)
+//                                .padding(.vertical, 4)
+//                                .background(Color(hex: "A811C7").opacity(0.2))
+//                                .foregroundColor(Color(hex: "A811C7"))
+//                                .clipShape(Capsule())
+//                        }
+//                    }
+//                    .padding(.top,12)
+//                    .padding(.horizontal,12)
+//
+//                    Text(condition.formattedOnSetDate)
+//                         .font(.montserrat(16, weight: .regular))
+//                        .foregroundColor(.black)
+//                        .padding(.horizontal,12)
+//
+//                    
+//                    Button(action: onTap) {
+//                        Text("View Details")
+//                           .font(.montserrat(14, weight: .bold))
+//                            .foregroundColor(.white)
+//                            .padding(.horizontal, 16)
+//                            .padding(.vertical, 8)
+//                            .background(Color(hex: "FF6605"))
+//                            .cornerRadius(20)
+//                    }
+//                    .buttonStyle(PlainButtonStyle())
+//                    .padding(.bottom, 12)
+//                    .padding(.horizontal,12)
+//
+//                }
+//                .padding(.leading, 12)
+//                .background(Color.white)
+//                .cornerRadius(8)
+//                .shadow(radius: 4)
+//
+//            
+//        }
+//
+//}
 struct ConditionListView: View {
-
     let condition: ConditionDummyData
     let onTap: () -> Void
-        
-        
-        var body: some View {
 
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack {
-                        Text(condition.codeDisplay)
-                            .font(.montserrat(18, weight: .bold))
-                            .foregroundColor(.black)
-                        Spacer()
-                            
-                        if condition.clinicalStatus ==  "active" {
-                            Text("Active")
-                                .font(.montserrat(9, weight: .semibold))
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 4)
-                                .background(Color(hex: "06C270").opacity(0.2))
-                                .foregroundColor(Color(hex: "06C270"))
-                                .clipShape(Capsule())
-
-                        }
-                        else  {
-                            Text("Resolved")
-                                .font(.montserrat(9, weight: .semibold))
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 4)
-                                .background(Color(hex: "A811C7").opacity(0.2))
-                                .foregroundColor(Color(hex: "A811C7"))
-                                .clipShape(Capsule())
-                        }
-                    }
-                    .padding(.top,12)
-                    .padding(.horizontal,12)
-
-                    Text(condition.formattedOnSetDate)
-                         .font(.montserrat(16, weight: .regular))
+    var body: some View {
+        Button(action: onTap) {
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Text(condition.codeDisplay)
+                        .font(.montserrat(18, weight: .bold))
                         .foregroundColor(.black)
-                        .padding(.horizontal,12)
-
+                    Spacer()
                     
-                    Button(action: onTap) {
-                        Text("View Details")
-                           .font(.montserrat(14, weight: .bold))
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .background(Color(hex: "FF6605"))
-                            .cornerRadius(20)
+                    if condition.clinicalStatus == "active" {
+                        Text("Active")
+                            .font(.montserrat(9, weight: .semibold))
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 4)
+                            .background(Color(hex: "06C270").opacity(0.2))
+                            .foregroundColor(Color(hex: "06C270"))
+                            .clipShape(Capsule())
+                    } else {
+                        Text("Resolved")
+                            .font(.montserrat(9, weight: .semibold))
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 4)
+                            .background(Color(hex: "A811C7").opacity(0.2))
+                            .foregroundColor(Color(hex: "A811C7"))
+                            .clipShape(Capsule())
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    .padding(.bottom, 12)
-                    .padding(.horizontal,12)
-
                 }
-                .padding(.leading, 12)
-                .background(Color.white)
-                .cornerRadius(8)
-                .shadow(radius: 4)
+                .padding(.top, 12)
+                .padding(.horizontal, 12)
 
-            
+                Text(condition.formattedOnSetDate)
+                    .font(.montserrat(16, weight: .regular))
+                    .foregroundColor(.black)
+                    .padding(.horizontal, 12)
+
+                // Keep the View Details button (optional)
+                Text("View Details")
+                    .font(.montserrat(14, weight: .bold))
+                    .foregroundColor(.white)
+                    .padding(.horizontal, 16)
+                    .padding(.vertical, 8)
+                    .background(Color(hex: "FF6605"))
+                    .cornerRadius(20)
+                    .padding(.bottom, 12)
+                    .padding(.horizontal, 12)
+            }
+            .padding(.leading, 12)
+            .background(Color.white)
+            .cornerRadius(8)
+            .shadow(radius: 4)
         }
-
+        .buttonStyle(PlainButtonStyle()) // removes blue highlight
+    }
 }
 
 struct ConditionSectionView: View {
@@ -225,3 +283,4 @@ struct ConditionSectionView: View {
 
     }
 }
+

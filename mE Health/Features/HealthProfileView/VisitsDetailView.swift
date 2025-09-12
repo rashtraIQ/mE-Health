@@ -71,7 +71,7 @@ struct VisitsDetailView: View {
                 VStack(spacing: 24) {
                     
                     HStack {
-                        CustomBackButton {
+                        CustomBackButton(title: "Visit") {
                             presentationMode.wrappedValue.dismiss()
                         }
                         Spacer()

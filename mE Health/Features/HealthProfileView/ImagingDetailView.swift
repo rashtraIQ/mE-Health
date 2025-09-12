@@ -74,7 +74,7 @@ struct ImagingDetailView: View {
                 VStack(spacing: 24) {
                     
                     HStack {
-                        CustomBackButton {
+                        CustomBackButton(title: "Imaging") {
                             presentationMode.wrappedValue.dismiss()
                         }
                         Spacer()

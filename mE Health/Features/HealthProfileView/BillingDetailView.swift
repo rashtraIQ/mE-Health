@@ -51,7 +51,7 @@ struct BillingDetailView: View {
                 VStack(spacing: 24) {
                     
                     HStack {
-                        CustomBackButton {
+                        CustomBackButton(title: "Billing") {
                             presentationMode.wrappedValue.dismiss()
                         }
                         Spacer()

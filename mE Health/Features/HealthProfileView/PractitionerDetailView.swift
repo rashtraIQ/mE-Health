@@ -23,36 +23,36 @@ struct PractitionerDetailView: View {
     
     @StateObject private var visitsVM = ReadDatencounter()
     @State private var filteredVisits: [VisitDummyData] = []
-
-
+    
+    
     @State private var orgCancellable: AnyCancellable?
     @State private var appointmentCancellable: AnyCancellable?
     @State private var visitCancellable: AnyCancellable?
-
+    
     let practitioner: PractitionerData
-
+    
     @State private var showVistList = false
     @State private var showApptList = false
     
     @State private var showUploadView = false
-
+    
     @State private var showImagePicker = false
     @State private var mediaSource: UIImagePickerController.SourceType = .photoLibrary
-
+    
     @State private var showVideoPicker = false
     @State private var showDocumentPicker = false
-
+    
     @State private var selectedImage: UIImage?
     @State private var selectedVideoURL: URL?
     @State private var selectedFileURL: URL?
-
+    
     @State private var navigateToPreview = false
     
     @State private var documentToPreview: URL? = nil
     @State private var showDocumentPreview: Bool = false
-
-
-   @State private var savedFiles: [SavedMedia] = []
+    
+    
+    @State private var savedFiles: [SavedMedia] = []
     
     private var practitionerFiles: [SavedMedia] {
         savedFiles.filter { $0.categoryId == practitioner.id }
@@ -60,16 +60,16 @@ struct PractitionerDetailView: View {
     @State private var selectedCategory: UploadCategory? = nil
     @Environment(\.viewController) private var viewControllerHolder: UIViewController?
     
-       private var get_file_name: String {
-           "\(practitioner.name)_\(practitioner.formattedCreatedDate)"
+    private var get_file_name: String {
+        "\(practitioner.name)_\(practitioner.formattedCreatedDate)"
     }
-
+    
     var body: some View {
         
         ScrollView(.vertical, showsIndicators: false) {
             
             HStack {
-                CustomBackButton {
+                CustomBackButton(title: "Practitioner") {
                     presentationMode.wrappedValue.dismiss()
                 }
                 Spacer()
@@ -84,14 +84,14 @@ struct PractitionerDetailView: View {
                     Image("Upload")
                         .foregroundColor(Color(hex: "FF6605"))
                 }
-
+                
             }
             .padding(.horizontal)
             .padding(.top, 8)
-
+            
             VStack(alignment: .leading, spacing: 16) {
                 Text("Details")
-                   .font(.montserrat(32, weight: .bold))
+                    .font(.montserrat(32, weight: .bold))
                 
                 PractitionerCardView(
                     practitioner: practitioner,
@@ -99,9 +99,10 @@ struct PractitionerDetailView: View {
                         
                     },
                     onActionTapped: {
-                       
+                        
                     }
                 )
+                
                 
                 VStack(spacing: 12) {
                     
@@ -126,9 +127,9 @@ struct PractitionerDetailView: View {
                     HStack {
                         Text("Appointments")
                             .font(.montserrat(22, weight: .bold))
-
+                        
                         Spacer()
-
+                        
                         // Show button only if more than 2 appointments
                         if filteredAppointments.count > 2 {
                             Button(action: {
@@ -144,7 +145,7 @@ struct PractitionerDetailView: View {
                             }
                         }
                     }
-
+                    
                     VStack(alignment: .leading, spacing: 8) {
                         // Show only first 2 appointments
                         ForEach(filteredAppointments.prefix(2)) { appointment in
@@ -156,14 +157,14 @@ struct PractitionerDetailView: View {
                         }
                     }
                 }
-
+                
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
                         Text("Visits")
                             .font(.montserrat(22, weight: .bold))
-
+                        
                         Spacer()
-
+                        
                         // Show button only if more than 2 appointments
                         if filteredVisits.count > 2 {
                             Button(action: {
@@ -179,7 +180,7 @@ struct PractitionerDetailView: View {
                             }
                         }
                     }
-
+                    
                     VStack(alignment: .leading, spacing: 8) {
                         // Show only first 2 appointments
                         ForEach(filteredVisits.prefix(2)) { visit in
@@ -191,15 +192,15 @@ struct PractitionerDetailView: View {
                         }
                     }
                 }
-
-
+                
+                
                 
                 if !practitionerFiles.isEmpty {
                     VStack(alignment: .leading, spacing: 12) {
                         Text("Saved Files")
                             .font(.montserrat(22, weight: .bold))
                             .padding(.horizontal)
-
+                        
                         LazyVGrid(columns: [GridItem(.flexible()), GridItem(.flexible())], spacing: 16) {
                             ForEach(practitionerFiles) { file in
                                 VStack(spacing: 8) {
@@ -235,7 +236,7 @@ struct PractitionerDetailView: View {
                                                         .frame(width: 140, height: 120)
                                                         .clipped()
                                                         .cornerRadius(8)
-
+                                                    
                                                     Image(systemName: "play.circle.fill")
                                                         .font(.system(size: 40))
                                                         .foregroundColor(.white)
@@ -256,7 +257,7 @@ struct PractitionerDetailView: View {
                                                         .scaledToFit()
                                                         .frame(width: 60, height: 60)
                                                         .foregroundColor(.blue)
-
+                                                    
                                                     Text("Open Document")
                                                         .font(.montserrat(14))
                                                         .foregroundColor(.blue)
@@ -272,7 +273,7 @@ struct PractitionerDetailView: View {
                                         .font(.montserrat(12))
                                         .lineLimit(3)
                                         .truncationMode(.tail)
-
+                                    
                                 }
                                 .padding(8)
                                 .background(Color.white)
@@ -283,10 +284,10 @@ struct PractitionerDetailView: View {
                         .padding(.horizontal)
                     }
                 }
-
                 
-
-
+                
+                
+                
                 
                 NavigationLink(
                     destination: VisitAllView(filteredVisits: filteredVisits),
@@ -303,44 +304,44 @@ struct PractitionerDetailView: View {
                     })
                 
             }
-
-                .navigationDestination(isPresented: $navigateToPreview) {
-                    if let selectedImage = selectedImage,
-                       let selectedCategory = selectedCategory {
-                        UploadPreviewView(
-                            image: selectedImage,
-                            getFileName: get_file_name,
-                            category: selectedCategory,
-                            onSave: { saved in
-        //                        savedFile = saved
-        //                        savedFiles.append(saved)
-                            }
-                        )
-                    }
-                    else if let selectedVideoURL = selectedVideoURL, let selectedCategory = selectedCategory {
-                            UploadPreviewView(
-                                getFileName: get_file_name,
-                                videoURL: selectedVideoURL,
-                                category: selectedCategory,
-                                onSave: { saved in
-                                    //savedFiles.append(saved) // Works for video too
-                                }
-                            )
+            
+            .navigationDestination(isPresented: $navigateToPreview) {
+                if let selectedImage = selectedImage,
+                   let selectedCategory = selectedCategory {
+                    UploadPreviewView(
+                        image: selectedImage,
+                        getFileName: get_file_name,
+                        category: selectedCategory,
+                        onSave: { saved in
+                            //                        savedFile = saved
+                            //                        savedFiles.append(saved)
                         }
-                    else if let selectedFileURL = selectedFileURL,
-                                  let selectedCategory = selectedCategory {
-                            UploadPreviewView(
-                                getFileName: get_file_name,
-                                documentURL: selectedFileURL,
-                                category: selectedCategory,
-                                onSave: { saved in }
-                            )
-                    }
-                    else {
-                        Text("No image selected") // fallback if needed
-                    }
+                    )
                 }
-
+                else if let selectedVideoURL = selectedVideoURL, let selectedCategory = selectedCategory {
+                    UploadPreviewView(
+                        getFileName: get_file_name,
+                        videoURL: selectedVideoURL,
+                        category: selectedCategory,
+                        onSave: { saved in
+                            //savedFiles.append(saved) // Works for video too
+                        }
+                    )
+                }
+                else if let selectedFileURL = selectedFileURL,
+                        let selectedCategory = selectedCategory {
+                    UploadPreviewView(
+                        getFileName: get_file_name,
+                        documentURL: selectedFileURL,
+                        category: selectedCategory,
+                        onSave: { saved in }
+                    )
+                }
+                else {
+                    Text("No image selected") // fallback if needed
+                }
+            }
+            
             .actionSheet(isPresented: $showUploadView) {
                 ActionSheet(
                     title: Text("Select Type"),
@@ -387,16 +388,16 @@ struct PractitionerDetailView: View {
             }
             .sheet(isPresented: $showDocumentPreview) {
                 if let url = documentToPreview {
-                        DocumentPreviewView(url: url)
-                    }
+                    DocumentPreviewView(url: url)
+                }
             }
             .onAppear {
                 savedFiles = MediaStorageManager.shared.fetchSavedMedia()
-
+                
                 if selectedCategory == nil {
                     selectedCategory = UploadCategory(name: "Practitioners", id: practitioner.id)
                 }
-
+                
                 // CombineLatest for practitioner-organization + organization
                 orgCancellable = Publishers.CombineLatest(
                     practOrganisationVM.$organizations,
@@ -407,12 +408,12 @@ struct PractitionerDetailView: View {
                     let orgIds = practData
                         .filter { $0.practitionerId == practitioner.id }
                         .map { $0.organizationId }
-
+                    
                     filteredOrganizations = orgData.filter { orgIds.contains($0.id) }
-
+                    
                     print("✅ Filtered orgs count: \(filteredOrganizations.count)")
                 }
-
+                
                 // Appointment filtering
                 appointmentCancellable = appointmentVM.$appoitments
                     .receive(on: DispatchQueue.main)
@@ -426,14 +427,14 @@ struct PractitionerDetailView: View {
                     .sink { encounter in
                         filteredVisits = encounter.filter { $0.practitionerId == practitioner.id }
                     }
-
+                
             }
-
+            
             
             .padding()
             .background(Color.white)
             .navigationBarBackButtonHidden(true)
-
+            
         }
     }
     
@@ -450,7 +451,7 @@ struct PractitionerDetailView: View {
             return nil
         }
     }
-
+    
 }
 
 

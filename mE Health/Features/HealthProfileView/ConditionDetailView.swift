@@ -77,7 +77,7 @@ struct ConditionDetailView: View {
                 VStack(alignment: .leading, spacing: 12) {
                     
                     HStack {
-                        CustomBackButton {
+                        CustomBackButton(title: "Condition") {
                             presentationMode.wrappedValue.dismiss()
                         }
                         Spacer()

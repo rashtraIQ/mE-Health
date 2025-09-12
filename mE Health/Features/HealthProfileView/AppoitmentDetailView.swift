@@ -60,7 +60,7 @@ struct AppoitmentDetailView: View {
             VStack(alignment: .leading, spacing: 16) {
                 
                 HStack {
-                    CustomBackButton {
+                    CustomBackButton(title: "Appointment") {
                         presentationMode.wrappedValue.dismiss()
                     }
                     Spacer()

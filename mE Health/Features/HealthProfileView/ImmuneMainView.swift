@@ -19,16 +19,16 @@ struct ImmuneDummyData: Identifiable, Equatable, Codable {
     let encounterId: String
     let createdAt: String
     let updatedAt: String
-
+    
     // Parsed vaccineCode as object
     var vaccineCode: CodeInfo? {
         try? JSONDecoder().decode(CodeInfo.self, from: Data(rawVaccineCode.utf8))
     }
-
+    
     var formattedOccurrenceDate: String {
         let isoFormatter = ISO8601DateFormatter()
         isoFormatter.formatOptions = [.withInternetDateTime]
-
+        
         if let date = isoFormatter.date(from: occurrenceDate) {
             let formatter = DateFormatter()
             formatter.dateFormat = "dd/MM/yyyy"
@@ -36,7 +36,7 @@ struct ImmuneDummyData: Identifiable, Equatable, Codable {
         }
         return occurrenceDate
     }
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case vaccineCodeSystem = "vaccineCode_system"
@@ -53,74 +53,77 @@ struct ImmuneDummyData: Identifiable, Equatable, Codable {
 }
 
 struct ImmuneMainView: View {
-
+    
     let immune: ImmuneDummyData
     let onTap: () -> Void
-        
-        
-        var body: some View {
-
-                VStack(alignment: .leading, spacing: 8) {
-                    HStack {
-                        Text(immune.vaccineCodeDisplay)
-                            .font(.montserrat(16, weight: .medium))
-                            .foregroundColor(.black)
-                        Spacer()
-                        
-                        if immune.status == "completed" {
-                            
-                            Text("Completed")
-                                .font(.caption)
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 4)
-                                .background(Color.green.opacity(0.2))
-                                .foregroundColor(.green)
-                                .clipShape(Capsule())
-
-                        }
-                        else {
-                            Text("Not Done")
-                                .font(.caption)
-                                .padding(.horizontal, 12)
-                                .padding(.vertical, 4)
-                                .background(Color(hex: "F02C2C").opacity(0.2))
-                                .foregroundColor(Color(hex: "F02C2C"))
-                                .clipShape(Capsule())
-                        }
-                        
-                    }
-                    .padding(.top,12)
-                    .padding(.horizontal,12)
-
-                    Text("Occurrence Date: \(immune.formattedOccurrenceDate)")
-                        .font(.montserrat(14, weight: .medium))
-                        .foregroundColor(.gray)
-                        .padding(.horizontal,12)
+    
+    
+    var body: some View {
+        Button(action: onTap){
+            VStack(alignment: .leading, spacing: 8) {
+                HStack {
+                    Text(immune.vaccineCodeDisplay)
+                        .font(.montserrat(16, weight: .medium))
+                        .foregroundColor(.black)
+                    Spacer()
                     
-
-
-                    Button(action: onTap) {
-                        Text("View Details")
-                           .font(.montserrat(14, weight: .bold))
-                            .foregroundColor(.white)
-                            .padding(.horizontal, 16)
-                            .padding(.vertical, 8)
-                            .background(Color(hex: "FF6605"))
-                            .cornerRadius(20)
+                    if immune.status == "completed" {
+                        
+                        Text("Completed")
+                            .font(.caption)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 4)
+                            .background(Color.green.opacity(0.2))
+                            .foregroundColor(.green)
+                            .clipShape(Capsule())
+                        
                     }
-                    .buttonStyle(PlainButtonStyle())
-                    .padding(.bottom, 12)
-                    .padding(.horizontal,12)
-
+                    else {
+                        Text("Not Done")
+                            .font(.caption)
+                            .padding(.horizontal, 12)
+                            .padding(.vertical, 4)
+                            .background(Color(hex: "F02C2C").opacity(0.2))
+                            .foregroundColor(Color(hex: "F02C2C"))
+                            .clipShape(Capsule())
+                    }
+                    
                 }
-                .padding(.leading, 12)
-                .background(Color.white)
-                .cornerRadius(8)
-                .shadow(radius: 4)
-
-            
+                .padding(.top,12)
+                .padding(.horizontal,12)
+                
+                Text("Occurrence Date: \(immune.formattedOccurrenceDate)")
+                    .font(.montserrat(14, weight: .medium))
+                    .foregroundColor(.gray)
+                    .padding(.horizontal,12)
+                
+                
+                
+                Button(action: onTap) {
+                    Text("View Details")
+                        .font(.montserrat(14, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .background(Color(hex: "FF6605"))
+                        .cornerRadius(20)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .padding(.bottom, 12)
+                .padding(.horizontal,12)
+                
+            }
+            .padding(.leading, 12)
+            .background(Color.white)
+            .cornerRadius(8)
+            .shadow(radius: 4)
         }
-
+        .buttonStyle(PlainButtonStyle())
+        
+        
+        
+    }
+    
 }
 
 struct ImmuneSectionView: View {
@@ -136,7 +139,7 @@ struct ImmuneSectionView: View {
         formatter.formatOptions = [.withInternetDateTime]
         return formatter
     }
-
+    
     
     var filteredMedication: [ImmuneDummyData] {
         immune.filter { data in
@@ -163,12 +166,12 @@ struct ImmuneSectionView: View {
             let matchesStatus: Bool = activeFilters.isEmpty || activeFilters.contains {
                 $0.label.lowercased() == data.status.lowercased()
             }
-
+            
             return matchesSearch && matchesDate && matchesStatus
-
+            
         }
     }
-
+    
     
     var body: some View {
         
@@ -176,7 +179,7 @@ struct ImmuneSectionView: View {
             // Horizontal date cards
             
             if filteredMedication.isEmpty {
-                        NoDataView()
+                NoDataView()
             } else {
                 ForEach(filteredMedication) { labdata in
                     ImmuneMainView(immune: labdata) {
@@ -185,10 +188,10 @@ struct ImmuneSectionView: View {
                 }
             }
             
-
-
+            
+            
         }
         .padding(.horizontal)
-
+        
     }
 }

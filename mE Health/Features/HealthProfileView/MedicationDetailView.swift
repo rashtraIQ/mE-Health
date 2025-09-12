@@ -58,7 +58,7 @@ struct MedicationDetailView: View {
                     VStack(spacing: 24) {
                         
                         HStack {
-                            CustomBackButton {
+                            CustomBackButton(title: "Medication") {
                                 presentationMode.wrappedValue.dismiss()
                             }
                             Spacer()

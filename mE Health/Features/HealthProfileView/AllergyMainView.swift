@@ -16,48 +16,51 @@ struct AllergyMainView: View {
     
     
     var body: some View {
-        
-        VStack(alignment: .leading, spacing: 12) {
-            HStack {
-                Text(allergy.code?.display ?? "")
-                    .font(.montserrat(20, weight: .medium))
-                    .foregroundColor(.black)
-                Spacer()
-                Text("Active")
-                    .font(.caption)
-                    .padding(.horizontal, 12)
-                    .padding(.vertical, 4)
-                    .background(Color.green.opacity(0.2))
-                    .foregroundColor(.green)
-                    .clipShape(Capsule())
-            }
-            .padding(.top,12)
-            .padding(.horizontal,12)
-            
-            Text("Recorded Date: \(allergy.formattedRecordedDate)")
-                 .font(.montserrat(16, weight: .regular))
-                .foregroundColor(.black)
+        Button(action: onTap){
+            VStack(alignment: .leading, spacing: 12) {
+                HStack {
+                    Text(allergy.code?.display ?? "")
+                        .font(.montserrat(20, weight: .medium))
+                        .foregroundColor(.black)
+                    Spacer()
+                    Text("Active")
+                        .font(.caption)
+                        .padding(.horizontal, 12)
+                        .padding(.vertical, 4)
+                        .background(Color.green.opacity(0.2))
+                        .foregroundColor(.green)
+                        .clipShape(Capsule())
+                }
+                .padding(.top,12)
                 .padding(.horizontal,12)
-            
-            
-            Button(action: onTap) {
-                Text("View Details")
-                   .font(.montserrat(14, weight: .bold))
-                    .foregroundColor(.white)
-                    .padding(.horizontal, 16)
-                    .padding(.vertical, 8)
-                    .background(Color(hex: "FF6605"))
-                    .cornerRadius(20)
+                
+                Text("Recorded Date: \(allergy.formattedRecordedDate)")
+                     .font(.montserrat(16, weight: .regular))
+                    .foregroundColor(.black)
+                    .padding(.horizontal,12)
+                
+                
+                Button(action: onTap) {
+                    Text("View Details")
+                       .font(.montserrat(14, weight: .bold))
+                        .foregroundColor(.white)
+                        .padding(.horizontal, 16)
+                        .padding(.vertical, 8)
+                        .background(Color(hex: "FF6605"))
+                        .cornerRadius(20)
+                }
+                .buttonStyle(PlainButtonStyle())
+                .padding(.bottom, 12)
+                .padding(.horizontal,12)
+                
             }
-            .buttonStyle(PlainButtonStyle())
-            .padding(.bottom, 12)
-            .padding(.horizontal,12)
-            
+            .padding(.leading, 12)
+            .background(Color.white)
+            .cornerRadius(8)
+            .shadow(radius: 4)
         }
-        .padding(.leading, 12)
-        .background(Color.white)
-        .cornerRadius(8)
-        .shadow(radius: 4)
+        .buttonStyle(PlainButtonStyle())
+        
         
     }
     

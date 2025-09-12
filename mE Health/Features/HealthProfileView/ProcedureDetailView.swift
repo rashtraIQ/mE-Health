@@ -47,7 +47,7 @@ struct ProcedureDetailView: View {
                     VStack(spacing: 24) {
                         
                         HStack {
-                            CustomBackButton {
+                            CustomBackButton(title: "Procedure") {
                                 presentationMode.wrappedValue.dismiss()
                             }
                             Spacer()

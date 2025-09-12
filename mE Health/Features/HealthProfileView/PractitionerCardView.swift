@@ -22,7 +22,7 @@ struct PractitionerData: Codable, Equatable , Identifiable{
             .first(where: { $0.hasPrefix("phone:") })?
             .replacingOccurrences(of: "phone:", with: "")
     }
-
+    
     var email: String? {
         telecom
             .components(separatedBy: ";")
@@ -40,18 +40,18 @@ extension PractitionerData {
     }
     
     var createdConvertDate: Date? {
-            let formatter = ISO8601DateFormatter()
-            formatter.formatOptions = [.withInternetDateTime]
-            return formatter.date(from: createdAt)
-        }
-
-        var formattedCreatedDate: String {
-            guard let date = createdConvertDate else { return "" }
-            let outputFormatter = DateFormatter()
-            outputFormatter.dateFormat = "dd/MM/yyyy"
-            return outputFormatter.string(from: date)
-        }
-
+        let formatter = ISO8601DateFormatter()
+        formatter.formatOptions = [.withInternetDateTime]
+        return formatter.date(from: createdAt)
+    }
+    
+    var formattedCreatedDate: String {
+        guard let date = createdConvertDate else { return "" }
+        let outputFormatter = DateFormatter()
+        outputFormatter.dateFormat = "dd/MM/yyyy"
+        return outputFormatter.string(from: date)
+    }
+    
 }
 
 struct PractitionerOrganisationResponse: Codable, Equatable {
@@ -69,44 +69,41 @@ struct PractitionerCardView: View {
     let practitioner: PractitionerData
     let onTap: () -> Void
     let onActionTapped: () -> Void  // ← ADD this
-
+    
     var body: some View {
         HStack(spacing: 4) {
             VStack(alignment: .leading, spacing: 12) {
                 Text(practitioner.name)
                     .font(.montserrat(16, weight: .bold))
-
+                
                 Text(practitioner.specialty)
-                     .font(.montserrat(14, weight: .regular))
+                    .font(.montserrat(14, weight: .regular))
                     .foregroundColor(.gray)
-
+                
                 HStack(spacing: 8) {
                     Image(systemName: "phone.fill")
                         .foregroundColor(Color(hex: "FF6605"))
                     Text(practitioner.phone ?? "")
-                         .font(.montserrat(14, weight: .regular))
+                        .font(.montserrat(14, weight: .regular))
                 }
-
+                
                 HStack(spacing: 8) {
                     Image(systemName: "envelope.fill")
                         .foregroundColor(Color(hex: "FF6605"))
                     Text(practitioner.email ?? "")
-                         .font(.montserrat(14, weight: .regular))
+                        .font(.montserrat(14, weight: .regular))
                 }
                 
                 
             }
-
+            
             Spacer()
             PractitionerActionColumn(
-                            practitioner: practitioner,
-                            onViewTapped: onActionTapped // ← PASS CALLBACK
-                        )
-                        .frame(height: 150)
-                        .padding(.trailing, 0)
-            
-            
-                
+                practitioner: practitioner,
+                onViewTapped: onActionTapped // ← PASS CALLBACK
+            )
+            .frame(height: 150)
+            .padding(.trailing, 0)  
         }
         .padding(.leading, 12)
         .frame(height:150)
@@ -122,7 +119,7 @@ struct PractitionerCardView: View {
 
 struct PractitionerActionColumn: View {
     //let icons = ["", "", "eye.fill"]
-
+    
     let icons = ["envelope.fill", "phone.fill", "upload_white"]
     let practitioner: PractitionerData
     let onViewTapped: () -> Void  // ← ADD this
@@ -155,7 +152,7 @@ struct PractitionerActionColumn: View {
                 .padding()
                 .frame(width: 50, height: 50)
                 .background(Color(hex: "FF6605"))
-
+            
         } else {
             Image(icon)
                 .resizable()
@@ -165,11 +162,11 @@ struct PractitionerActionColumn: View {
                 .padding()
                 .frame(width: 50, height: 50)
                 .background(Color(hex: "FF6605"))
-
+            
         }
     }
-
-
+    
+    
     private func handleAction(for icon: String) {
         switch icon {
         case "envelope.fill":
@@ -208,16 +205,16 @@ struct PractitionerSectionView: View {
     @State private var selectedImage: UIImage?
     @State private var mediaSource: UIImagePickerController.SourceType = .photoLibrary
     @State private var navigateToPreview = false
-
+    
     @State private var showDocumentPicker = false
     @State private var selectedFileURL: URL?
-
+    
     @State private var showVideoPicker = false
     @State private var selectedVideoURL: URL?
     
     @State private var selectedCategory: UploadCategory? = nil
-
-
+    
+    
     var filteredPractitioners: [PractitionerData] {
         practitioners.filter { practitioner in
             // 1. Filter by search text if available
@@ -226,9 +223,9 @@ struct PractitionerSectionView: View {
                 matchesSearch = true
             } else {
                 matchesSearch = practitioner.name.localizedCaseInsensitiveContains(searchText) ||
-                                practitioner.specialty.localizedCaseInsensitiveContains(searchText) ||
-                                (practitioner.email?.localizedCaseInsensitiveContains(searchText) ?? false) ||
-                                (practitioner.phone?.localizedCaseInsensitiveContains(searchText) ?? false)
+                practitioner.specialty.localizedCaseInsensitiveContains(searchText) ||
+                (practitioner.email?.localizedCaseInsensitiveContains(searchText) ?? false) ||
+                (practitioner.phone?.localizedCaseInsensitiveContains(searchText) ?? false)
             }
             let matchesDate: Bool
             if let start = startDate, let end = endDate {
@@ -243,8 +240,8 @@ struct PractitionerSectionView: View {
             return matchesSearch && matchesDate
         }
     }
-
-
+    
+    
     var body: some View {
         
         VStack(spacing: 20) {
@@ -318,7 +315,7 @@ struct PractitionerSectionView: View {
             }
         }
         .navigationDestination(isPresented: $navigateToPreview) {
-           // let fileName = "\(allergy.code?.display ?? "Allergy")_\(allergy.formattedRecordedDate)"
+            // let fileName = "\(allergy.code?.display ?? "Allergy")_\(allergy.formattedRecordedDate)"
             if let selectedImage = selectedImage,
                let selectedCategory = selectedCategory {
                 UploadPreviewView(
@@ -326,38 +323,39 @@ struct PractitionerSectionView: View {
                     getFileName: "",
                     category: selectedCategory,
                     onSave: { saved in
-//                        savedFile = saved
-//                        savedFiles.append(saved)
+                        //                        savedFile = saved
+                        //                        savedFiles.append(saved)
                     }
                 )
             }
             else if let selectedVideoURL = selectedVideoURL, let selectedCategory = selectedCategory {
-                    UploadPreviewView(
-                        getFileName: "",
-                        videoURL: selectedVideoURL,
-                        category: selectedCategory,
-                        onSave: { saved in
-                            //savedFiles.append(saved) // Works for video too
-                        }
-                    )
+                UploadPreviewView(
+                    getFileName: "",
+                    videoURL: selectedVideoURL,
+                    category: selectedCategory,
+                    onSave: { saved in
+                        //savedFiles.append(saved) // Works for video too
+                    }
+                )
             }
             else if let selectedFileURL = selectedFileURL,
-                          let selectedCategory = selectedCategory {
-                    UploadPreviewView(
-                        getFileName: "",
-                        documentURL: selectedFileURL,
-                        category: selectedCategory,
-                        onSave: { saved in }
-                    )
+                    let selectedCategory = selectedCategory {
+                UploadPreviewView(
+                    getFileName: "",
+                    documentURL: selectedFileURL,
+                    category: selectedCategory,
+                    onSave: { saved in }
+                )
             }
             else {
                 Text("No image selected") // fallback if needed
             }
         }
-
+        
     }
-
+    
 }
+
 
 
 

@@ -74,7 +74,7 @@ struct MedicationListView: View {
     let onTap: () -> Void
         
         var body: some View {
-
+            Button(action: onTap){
                 VStack(alignment: .leading, spacing: 8) {
                     HStack {
                         Text(medication.description)
@@ -119,7 +119,8 @@ struct MedicationListView: View {
                 .background(Color.white)
                 .cornerRadius(8)
                 .shadow(radius: 4)
-
+            }
+            .buttonStyle(PlainButtonStyle())
     }
 }
 

@@ -175,9 +175,16 @@ struct VisitsSectionView: View {
                 NoDataView()
             } else {
                 ForEach(filterVisits) { visitData in
-                    VisitsView(visit: visitData) {
-                        onCardTap(visitData)
-                    }
+//                    VisitsView(visit: visitData) {
+//                        onCardTap(visitData)
+//                    }
+                    NavigationLink(destination: VisitsDetailView(visit: visitData)) {
+                                            VisitsView(visit: visitData) {
+                                                onCardTap(visitData) // still call callback if needed
+                                            }
+                                            .contentShape(Rectangle()) // makes entire cell tappable
+                                        }
+                                        .buttonStyle(PlainButtonStyle())
                 }
             }
 
